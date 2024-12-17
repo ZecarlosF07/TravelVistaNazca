@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+    <string name="home_tab">Inicio</string>
+    <string name="fav_tab">Favoritos</string>
+    <string name="profile_tab">Gemini</string>
+    <string name="cart_tab">Cart</string>
+    <string name="ratting">CALIFICACION</string>
+    <string name="type">TIPO</string>
+    <string name="estimation">CERCANIA AL CENTRO</string>
+    <string name="via">VIA</string>
+    <string name="choose_date">Horario de Atencion</string>
+    <string name="choose_meeting_point">Choose Meeting Point</string>
+    <string name="facilities">Facilities</string>
+    <string name="preview">Fotos</string>
+    <string name="favorite_destination">Tus Rincones Favoritos</string>
+    <string name="popular_destination">Vive y Descansa</string>
+    <string name="view_all">Ver todos</string>
+    <string name="category">Provincias</string>
+    <string name="all">All</string>
+    <string name="num_of_people">Number Of People</string>
+    <string name="gemini">Recorre Ica con la IA</string>
+</resources>
