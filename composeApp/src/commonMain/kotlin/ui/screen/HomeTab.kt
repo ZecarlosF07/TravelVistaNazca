@@ -107,7 +107,7 @@ fun HomeScreenView(
     val destinations by viewModel.destinations.collectAsState()
     val nearestDestinations = FakeArticles.destinations
     val categories by viewModel.categories.collectAsState()
-    var artvisible by remember { mutableStateOf(false) }
+    var artvisible by remember { mutableStateOf(true) }
 
     Surface(modifier = Modifier.background(color = Color.White).fillMaxWidth().padding(bottom = BOTTOM_NAV_SPACE)) {
         var mDestinations by remember { mutableStateOf(destinations) }
@@ -144,8 +144,8 @@ fun HomeScreenView(
                 content = {
                     loadCategoryItems(categories) { category ->
                         when (category.title) {
-                            "Todo" -> {
-                                artvisible = false
+                            "Destinos" -> {
+                                artvisible = true
                                 mDestinations = arrayListOf<Destination>().apply {
                                     addAll(destinations.filter { it.type == "Turismo" })
                                 }
@@ -155,7 +155,7 @@ fun HomeScreenView(
                                 }
                             }
                             else -> {
-                                artvisible = true
+                                artvisible = false
                                 mDestinations = arrayListOf<Destination>().apply {
                                     addAll(destinations.filter { it.category == category && it.type == "Festividad" || it.category == category && it.type == "Turismo"})
                                 }
@@ -205,11 +205,8 @@ fun HomeScreenView(
             ),
             ChildLayout(
                 contentType = HomeScreenContents.DESTINATION_SMALL_SECTION.name,
-                items = if (artvisible == true){
-                    mHoteles
-                }else{
-                    mDestinations2
-                },
+                items =
+                    mDestinations2,
                 content = { item ->
                     LoadItemAfterSafeCast<Destination>(item) {
                         destinationSmallItem(it) {
